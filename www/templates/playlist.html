@@ -1,0 +1,89 @@
+<ion-view view-title="Playlist">
+  <ion-content style="margin: -1px -4px">
+    <ion-slide-box  active-slide="1" does-continue="true">
+      <ion-slide ion-slide-tab-label="hello">
+        <!--<ion-refresher on-refresh="doRefresh()" spinner="lines"></ion-refresher>-->
+        <div class="list list-inset" ng-show="showS" id="search" >
+          <label class="item item-input" >
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search">
+          </label>
+        </div>
+        <button onclick="choose()" class="icon ion-cash">123</button>
+        <button onclick="showagain()"   class="icon ion-social-apple">123</button>
+        <!--<ion-refresher on-refresh="doRefresh()" spinner="lines"></ion-refresher>-->
+
+        <ion-slide-box  active-slide="1"  style="text-align: center;"  does-continue="true">
+          <ion-slide >
+            <div class="row">
+
+              <img value="1" src="img/cake1.gif" alt="" class="col"/>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="row">
+              <img value="2" src="img/cake2.gif" alt="" class="col"/>
+            </div>
+          </ion-slide>
+          <ion-slide ng-click="ok()">
+            <div class="row">
+              <img value="3" src="img/cake3.gif" alt=""  class="col"/>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+        <div class="row" >
+          <ion-list class="col" >
+            <ion-item class="item-thumbnail-left"  ng-repeat="newlist in newlists" ng-click="checkNews()" style="border: none ;border-bottom: 40px">
+               <img src="{{newlist.pic}}" alt="" />
+               <span class="row">
+                  <h2 class="col">{{newlist.title}}</h2>
+               </span>
+              <div class="row" style="font-size: small">
+                <span class="col col-60 item-placeholder">{{newlist.time}}</span>
+                <span class="col item-placeholder icon ion-chatbox-working"> review {{newlist.number}}</span>
+              </div>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-slide>
+      <ion-slide ion-slide-tab-label="hello">
+        <div class="row">
+          <ion-list class="col">
+            <ion-item class="item-thumbnail-left"  ng-repeat="newlist in newlists" ng-click="checkNews()">
+              <img src="{{newlist.pic}}" alt="" />
+        <span class="row">
+          <h2 class="col">{{newlist.title}}</h2>
+        </span>
+              <div class="row" style="font-size: small">
+                <span class="col col-60 item-placeholder">{{newlist.time}}</span>
+                <span class="col item-placeholder icon ion-chatbox-working"> review {{newlist.number}}</span>
+              </div>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-slide>
+      <ion-slide ng-click="ok()">
+        <div class="row">
+          <ion-list  class="col">
+            <ion-item class="item-thumbnail-left"  ng-repeat="newlist in newlists" ng-click="checkNews()">
+              <img src="{{newlist.pic}}" alt="" />
+        <span class="row">
+          <h2 class="col">{{newlist.title}}</h2>
+        </span>
+              <div class="row" style="font-size: small">
+                <span class="col col-60 item-placeholder">{{newlist.time}}</span>
+                <span class="col item-placeholder icon ion-chatbox-working"> review {{newlist.number}}</span>
+              </div>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+  <!--<script type="text/javascript">-->
+    <!--function choose(){-->
+        <!--document.getElementById('search').style.display=;-->
+
+    <!--};-->
+  <!--</script>-->
+</ion-view>

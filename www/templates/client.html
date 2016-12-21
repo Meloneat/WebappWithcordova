@@ -1,0 +1,39 @@
+<ion-view view-title="用户登录">
+
+  <ion-content>
+    <div>
+      <ion-list >
+        <ion-item class="item-divider"></ion-item>
+        <ion-item ng-repeat="client in clients"  class="item-thumbnail-left">
+          <img ng-src="{{client.pic}}">
+          <h2 ng-bind="client.name"></h2>
+          <!--item-placeholder是可以让颜色变淡的-->
+          <h3 class="item-placeholder">百助号：{{client.account}}</h3>
+          <!--<h3 class="item-placeholder">百助号：450803313</h3>-->
+        </ion-item>
+        <ion-item class="item-divider"></ion-item>
+        <ion-item class="item-avatar-left">
+          <img src="img/history.png" alt=""/>
+          <h2>历史</h2>
+        </ion-item>
+        <ion-item class="item-avatar-left">
+          <img src="img/shoucang.png" alt=""/>
+          <h2>收藏</h2>
+        </ion-item>
+        <ion-item class="item-avatar-left">
+          <img src="img/like.png" alt=""/>
+          <h2>钱包</h2>
+        </ion-item>
+        <ion-item class="item-divider"></ion-item>
+        <ion-item class="item-avatar-left">
+          <img src="img/settings-l.png" alt=""/>
+          <h2>设置</h2>
+        </ion-item>
+        <ion-item class="item-divider"></ion-item>
+        <h3 style="text-align: center">退出登录</h3>
+        <ion-item class="item-divider"></ion-item>
+      </ion-list>
+    </div>
+
+  </ion-content>
+</ion-view>

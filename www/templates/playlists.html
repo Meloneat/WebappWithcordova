@@ -1,0 +1,88 @@
+<!--这个部分是为了使sidemenu有tabs选项卡的功能,不过未能实现愿望，因此我尝试用slide盒子模型来实现效果-->
+<!--<ion-view view-title="头条" xmlns="http://www.w3.org/1999/html">-->
+
+  <!--<ion-content>-->
+<!--<div class="bar bar-header has-tabs-top bar-positive">-->
+  <!--<div class="h1 title">条纹样式选项卡</div>-->
+<!--</div>-->
+
+<!--<div class=" tabs-striped tabs-top tabs-background-positive tabs-color-light">-->
+  <!--<div class="tabs">-->
+    <!--<a class="tab-item" href="#">-->
+      <!--<i class="icon ion-home"></i>-->
+      <!--测试-->
+    <!--</a>-->
+    <!--<a class="tab-item" href="#">-->
+      <!--<i class="icon ion-star"></i>-->
+      <!--收藏-->
+      <!--<p></p>-->
+    <!--</a>-->
+    <!--<a class="tab-item active" href="#">-->
+      <!--<i class="icon ion-gear-a"></i>-->
+      <!--设置-->
+    <!--</a>-->
+  <!--</div>-->
+<!--</div>-->
+    <!--</ion-content>-->
+<!--</ion-view>-->
+  <ion-view view-title="头条" xmlns="http://www.w3.org/1999/html" >
+
+    <ion-content>
+      <!--<ion-list>-->
+      <!--<ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">-->
+      <!--{{playlist.title}}-->
+      <!--</ion-item>-->
+      <!--</ion-list>-->
+      <ion-refresher on-refresh="doRefresh()" spinner="lines"></ion-refresher>
+      <div class="list list-inset" ng-show="showS" id="search">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search">
+        </label>
+      </div>
+
+      <ion-slide-box  active-slide="1"  style="text-align: center;"  does-continue="true">
+        <ion-slide title="huxu">
+          <div class="row">
+
+            <img src="img/cake1.gif" alt="" class="col"/>
+          </div>
+        </ion-slide>
+        <ion-slide>
+          <div class="row">
+            <img src="img/cake2.gif" alt="" class="col"/>
+          </div>
+        </ion-slide>
+        <ion-slide ng-click="ok()">
+          <div class="row">
+            <img src="img/cake3.gif" alt=""  class="col"/>
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+
+      <!--<div class="list item-avatar-left" ng-repeat="newlist in newlists">-->
+      <!--<span class="item" >-->
+      <!--<img src="{{newlist.pic}}" alt="" />-->
+      <!--</span>-->
+      <!--</div>-->
+      <!--<button class="button button-icon icon ion-cash" onclick="choose()" ondblclick="showagain()"></button>-->
+      <ion-list >
+        <ion-item class="item-thumbnail-left"  ng-repeat="newlist in newlists" ng-click="upShow()">
+          <img src="{{newlist.pic}}" alt="" />
+        <span class="row">
+          <h2 class="col">{{newlist.title}}</h2>
+        </span>
+          <div class="row" style="font-size: small">
+            <span class="col col-60 item-placeholder">{{newlist.time}}</span>
+            <span class="col item-placeholder icon ion-chatbox-working"> review {{newlist.number}}</span>
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-view>
+
+
+
+
+
+
